@@ -7,6 +7,7 @@ class CinemaHallSerializer(serializers.ModelSerializer):
     class Meta:
         model = CinemaHall
         fields = ("id", "name", "rows", "seats_in_row", "capacity")
+        read_only_fields = ("capacity",)
 
 
 class GenreSerializer(serializers.ModelSerializer):
@@ -19,6 +20,7 @@ class ActorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Actor
         fields = ("id", "first_name", "last_name", "full_name")
+        read_only_fields = ("full_name",)
 
 
 class MovieSerializer(serializers.ModelSerializer):
